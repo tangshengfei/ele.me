@@ -20,6 +20,7 @@
     -webkit-overflow-scrolling: touch;
     &::-webkit-scrollbar{
         width:0px;
+        height: 100px;
         background: #999;
     }
 }
@@ -77,7 +78,7 @@
 }
 .home-title{
     font-size: 28px;
-    margin-top: 10px;
+    margin-top: 20px;
     height: 60px;
     line-height: 60px;
     color: #333;

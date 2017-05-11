@@ -10,8 +10,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   new FastClick(document.body);
 });
 
-// console.log(fix);
-
 Vue.use(VueRouter);
 
 const router = new VueRouter({
