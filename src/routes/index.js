@@ -40,7 +40,7 @@ export default [{
             component: Shop
         },
         {
-            path: '/shopInfo',
+            path: '/shopInfo/:shopId',
             component: ShopInfo
         },
         {
