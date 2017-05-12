@@ -14,11 +14,12 @@
                         </div>
                     </div>
                     <div class="desc">
-                        <div clss="raty">
-                            <Raty :count="5"></Raty>
-                        </div>
+                        <Raty :count="4.5"/>
                         <div class="count">
-
+                            4.5
+                        </div>
+                        <div class="total">
+                            月售1461单
                         </div>
                     </div>
                 </div>
@@ -39,7 +40,7 @@
         }
     }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
     .shop-list{
         background:#fff;
         .item{
@@ -107,5 +108,20 @@
             }
         }
     }
+    .desc{
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        font-size: 20px;
+        color: #666;
+        font-weight: 500;
+    }
+    .count {
+        margin:0 8px 0 0;
+        color: #ff6000;
+        font-weight: 600;
+    }
+    
 </style>
 

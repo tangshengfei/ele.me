@@ -1,4 +1,8 @@
 @import "common.scss";
+.icon{
+    font-style: normal;
+    font-family: "iconfont";
+}
 .router-fade-enter-active, .router-fade-leave-active {
     transition: opacity .3s;
 }
