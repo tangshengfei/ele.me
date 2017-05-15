@@ -14,9 +14,9 @@
                         </div>
                     </div>
                     <div class="desc">
-                        <Raty :count="4.5"/>
+                        <Raty :count="4.6"/>
                         <div class="count">
-                            4.5
+                            4.6
                         </div>
                         <div class="total">
                             月售1461单

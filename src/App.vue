@@ -1,11 +1,10 @@
 <template>
-    <transition name="router-fade" mode="out-in">
+    <transition name="slide-left">
         <keep-alive>
             <router-view></router-view>
         </keep-alive>
     </transition>
 </template>
-
 <script>
   	export default {
     	name: 'app'

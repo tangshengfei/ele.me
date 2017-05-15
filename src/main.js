@@ -20,6 +20,10 @@ const router = new VueRouter({
 new Vue({
   el: "#app",
 	router,
-  render: (h) => h(App)
+  render: (h) => h(App),
+  watch: {
+      '$route' (to, from){
+          this.transitionName = to.path.split('/').length < from.path.split('/').length ? 'slide-right' : 'slide-left';
+      }
+  }
 });
-

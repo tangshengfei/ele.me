@@ -4,11 +4,11 @@
 }
 @font-face {
   font-family: 'iconfont';  /* project id 299316 */
-  src: url('//at.alicdn.com/t/font_uq75if3t6i4cmcxr.eot');
-  src: url('//at.alicdn.com/t/font_uq75if3t6i4cmcxr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_uq75if3t6i4cmcxr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_uq75if3t6i4cmcxr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_uq75if3t6i4cmcxr.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_e0feco5tzgjh5mi.eot');
+  src: url('//at.alicdn.com/t/font_e0feco5tzgjh5mi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_e0feco5tzgjh5mi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_e0feco5tzgjh5mi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_e0feco5tzgjh5mi.svg#iconfont') format('svg');
 }
 
 $bodyBackgroundColor:#f4f4f4;
@@ -34,7 +34,7 @@ body,html{
     img{
         max-width: rem(750);
     }
-    font-family: "Microsoft Yahei";
+    font-family: 'Helvetica Neue',Tahoma,Arial,PingFangSC-Regular,'Hiragino Sans GB','Microsoft Yahei',sans-serif;
 }
 
 *{

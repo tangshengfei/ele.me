@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import App from '@/App';
 
 import Home from '@/page/Home.vue';
