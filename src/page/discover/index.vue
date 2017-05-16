@@ -1,28 +1,10 @@
 <template>
-    <div class="flex discover">
+    <div class="flex">
         <TopHeader :title="'发现'"/>
-        <div class="flex-container">
+        <div class="flex-container discover">
             <!-- parts -->
             <div class="parts">
-                <div class="entry list">
-                    <a href="#" class="child">
-                        <img class="img-icon" src="/static/assets/discover/part-icon1.jpeg">
-                        <p class="entry-title" style="color:#FF9700">积分商城</p>
-                        <p class="entry-tips">0元好物在这里！</p>
-                    </a>
-                    <div class="child">
-                        <a href="#">
-                            <img class="img-icon" src="/static/assets/discover/part-icon2.jpeg">
-                            <p class="entry-title" style="color:#F5785D">美味爆料</p>
-                            <p class="entry-tips">承包你的小饥饿！</p>
-                        </a>
-                        <a href="#">
-                            <img class="img-icon" src="/static/assets/discover/part-icon3.jpeg">
-                            <p class="entry-title" style="color: #1BA9E1;">推荐有奖</p>
-                            <p class="entry-tips">5元现金拿不停</p>
-                        </a>
-                    </div>
-                </div>
+                <DiscoverEntry :list="entrys"/>
                 <div class="entry block">
                     <a href="#"><img src="/static/assets/discover/part-block.jpeg"></a>
                 </div>
@@ -55,85 +37,59 @@
 <script>
     import FooterNav from "@/components/FooterNav";
     import TopHeader from "@/components/TopHeader";
+    import DiscoverEntry from "@/components/DiscoverEntry";
 
     export default {
         data() {
             return {
-                title: ''
+                title: '',
+                entrys: [
+                    {
+                        url: '#',
+                        src: '/static/assets/discover/part-icon1.jpeg',
+                        color: '#FF9700',
+                        title: '积分商城',
+                        tips: '0元好物在这里！',
+                    },
+                    {
+                        url: '#',
+                        src: '/static/assets/discover/part-icon2.jpeg',
+                        color: '#F5785D',
+                        title: '美味爆料',
+                        tips: '承包你的小饥饿！',
+                    },
+                    {
+                        url: '#',
+                        src: '/static/assets/discover/part-icon3.jpeg',
+                        color: '#1BA9E1',
+                        title: '推荐有奖',
+                        tips: '5元现金拿不停',
+                    },
+                    {
+                        url: '#',
+                        src: '/static/assets/discover/part-icon4.jpeg',
+                        color: '#A2CF26',
+                        title: '有红包快抢',
+                        tips: '礼包福利领不停',
+                    }
+                ]
             }
         },
         components: {
             TopHeader,
-            FooterNav
+            FooterNav,
+            DiscoverEntry
         }
     }
 </script>
 <style lang="scss">
-    $distance: 23px;
+    @import "../../style/common.scss";
+    $distance: rem(21);
+    .discover{
+        padding-bottom: rem(10)
+    }
     .parts{
         margin-bottom: $distance;
-        .list{
-            background: #fff;
-            height: 345px;
-            display: flex;
-        }
-        .child:first-child{
-            border-right: 1px solid #ededed;
-            padding:52px 30px 35px;
-            position: relative;
-            .img-icon{
-                width: 150px;
-                position: absolute;
-                bottom:-3px;
-                margin:44px 52px 50px;
-            }
-        }
-        .block{
-            height: 173px;
-            overflow: hidden;
-            margin-top: $distance;
-            img{
-                width: 100%;
-            }
-        }
-        .entry-title{
-            font-size: 36px;
-            font-weight: 400;
-        }
-        .entry-tips{
-            margin-top: 18px;
-            color: #999;
-            font-weight: 400;
-            font-size: 24px;
-        }
-        .child{
-            p{
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-            }
-            box-sizing: border-box;
-            
-            height: 100%;
-            width: 50%;
-            a:first-child{
-                border-bottom: 1px solid #ededed;
-            }
-            a{
-                padding: 52px 30px;
-                box-sizing: border-box;
-                overflow: hidden;
-                position: relative;
-                display: block;
-                height: 50%;
-                width: 100%;
-            }
-            .img-icon{
-                margin-top: -4%;
-                width: 90px;
-                float: right;
-            }
-        }
     }
     .activity{
         height: 598px;
