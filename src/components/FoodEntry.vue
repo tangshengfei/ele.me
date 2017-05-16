@@ -110,6 +110,7 @@
 </script>
 <style lang="scss">
     .food-entry{
+        min-height: 4.72rem;
         background:#fff;
         width:100%;
         overflow: hidden;
@@ -118,28 +119,30 @@
         .wrap{
             // transform: translateX(-100%);
             width:100%;
-            padding-bottom: 70px;
+            height: 4.7rem;
             display: flex;
             a{
                 display: block;
                 color: #666;
             }
             img{
-                width:90px;
+                width:1.2rem;
                 // text-align: center;
             }
             span{
-                margin-top: 10px;
                 display: block;
+                margin-top: .133333rem;
+                color: #666;
+                font-size: .32rem;
             }
             .item{
                 flex-shrink: 0;
-                width:750px;
-                height:100%;
+                width:100%;
+                // height:100%;
                 overflow: hidden;
             }
             li{
-                margin-top: 30px;
+                margin-top: .293333rem;
                 float: left;
                 width: 25%;
             }
@@ -147,20 +150,21 @@
 
         .dot{
             width: 100%;
-            height: 20px;
             position: absolute;
             bottom: 10px;
             left: 0;
         }
         .dot-item{
             display: inline-block;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: #999;
-            margin: 5px 5px;
+            width: 8px;
+            height: 8px;
+            border-radius: 100%;
+            background: #000;
+            opacity: .2;
+            margin: 0 .066667rem;
             &.active{
-                background: #666;
+                background-color: #000;
+                opacity: .6;
             }
         }
     }

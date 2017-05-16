@@ -3,7 +3,6 @@ import App from "./App";
 import routes from './routes';
 import VueRouter from "vue-router";
 import FastClick from "fastclick";
-import './plugins/meta';
 Vue.config.productionTip = false;
 
 document.addEventListener("DOMContentLoaded", function(event) {

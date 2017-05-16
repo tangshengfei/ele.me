@@ -21,24 +21,27 @@
         text-align: center;
         color:#fff;
         background:#0097FF;
-        height: 88px;
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        height: 1.173333rem;
+        font-size: .48rem;
     }
     h1{
-        font-size: 36px;
+        font-size: 1em;
         position: absolute;
         left: 50%;
-        margin-left: -50px;
-        width: 100px;
-        height: 88px;
+        margin-left: -1.2rem;
+        width: 2.4rem;
         font-weight: 700;
-        line-height: 88px;
     }
     .back{
         color:#fff;
-        padding-left: 23px;
-        font-size: 44px;
-        font-weight: 600;
+        width: 1.173333rem;
+        height: 1.173333rem;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        font-size: 0.65rem;
     }
 </style>

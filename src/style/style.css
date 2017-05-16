@@ -20,7 +20,7 @@ body, html {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   height: 100%;
-  width: 750px;
+  /*width: 750px;*/
   line-height: 1;
   background: #f4f4f4;
 }

@@ -42,7 +42,7 @@
                     <span class="text">美食热推</span>
                     <span class="line line-right"></span>
                 </div>
-                <p class="activity-sub-title"></p>
+                <p class="activity-sub-title">你的口味我都懂得</p>
                 <div class="activity-body">
 
                 </div>

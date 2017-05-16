@@ -1,6 +1,6 @@
 @function rem($px){
-    //  @return $px/75+rem;
-    @return $px+px;
+     @return $px/75+rem;
+    // @return $px+px;
 }
 @font-face {
   font-family: 'iconfont';  /* project id 299316 */
@@ -28,11 +28,11 @@ body,html{
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     height: 100%;
-    width: 750px;
+    // width: 750px;
     line-height: 1;
     background:$bodyBackgroundColor;
     img{
-        max-width: rem(750);
+        max-width: 100%;
     }
     font-family: 'Helvetica Neue',Tahoma,Arial,PingFangSC-Regular,'Hiragino Sans GB','Microsoft Yahei',sans-serif;
 }
@@ -40,8 +40,12 @@ body,html{
 *{
     margin:0;
     padding:0;
+    
 }
-
+*, ::after, ::before {
+    box-sizing: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
 
 ul{
     list-style: none;

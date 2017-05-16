@@ -14,12 +14,29 @@
                         </div>
                     </div>
                     <div class="desc">
-                        <Raty :count="4.6"/>
-                        <div class="count">
-                            4.6
+                        <div class="desc-text">
+                            <Raty :count="4.6"/>
+                            <div class="count">
+                                4.6
+                            </div>
+                            <div class="total">
+                                月售1461单
+                            </div>
                         </div>
-                        <div class="total">
-                            月售1461单
+                        <div class="desc-identyfy">
+                            <span>准时达</span>
+                            <span class="identyfy-way">蜂鸟专送</span>
+                        </div>
+                    </div>
+                    <div class="desc2">
+                        <div class="price-info">
+                            <span>¥20起送</span>
+                            <span>配送费¥5</span>
+                            <span>¥28/人</span>
+                        </div>
+                        <div class="disinfo">
+                            <span>880m</span>
+                            <span>27分钟</span>
                         </div>
                     </div>
                 </div>
@@ -42,28 +59,35 @@
 </script>
 <style lang="scss" scoped>
     .shop-list{
-        background:#fff;
+            background-color: #fff;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…J6TTgwOCAxODRoMjQydjMwSDgwOHpNOTE3IDQ4aDEzM3YzN0g5MTd6Ii8+PC9nPjwvc3ZnPg==);
+            background-size: 100% auto;
         .item{
-            padding: 20px 25px;
-            // height: 100px;
-            border-bottom:1px solid #f3f3f3;
+            font-size: .293333rem;
+            border-bottom:1px solid #eee;
             a{
+                justify-content: space-between;
                 display: flex;
                 width:100%;
                 height: 100%;
             }
         }
         .logo{
-            width: 120px;
-            height: 120px;
-            margin-right: 10px;
+            padding: .4rem .266667rem;
+            width: 1.6rem;
+            height: 1.6rem;
             img{
+                border-radius: .053333rem;
                 width: 100%;
                 height: 100%;
             }
         }
         .info{
             flex:1;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            padding: .4rem .266667rem .4rem 0;
         }
         .header{
             display: flex;
@@ -71,26 +95,25 @@
             justify-content: space-between;
         }
         .title{
-            max-width: 450px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            max-width: 5rem;
+            height: .426667rem;
             color: #333;
-            font-size: 28px;
+            font-weight: 700;
+            font-size: .4rem;
             &.level1::before{
-                display: inline-block;
-                margin-right: 15px;
+                margin-right: .133333rem;
+                padding: 0 .066667rem;
+                height: .4rem;
+                border-radius: .053333rem;
                 background-color: #ffd930;
                 color: #52250a;
                 content: "\54C1\724C";
                 vertical-align: top;
-                border-radius: 5px;
                 text-align: center;
+                white-space: nowrap;
                 font-weight: 700;
-                font-size: 20px;
-                height: 30px;
-                line-height: 30px;
-                padding: 0 5px;
+                font-size: .293333rem;
+                line-height: .4rem;
             }
         }
         .labels{
@@ -101,27 +124,101 @@
             height: 30px;
             line-height: 30px;
             >span{
-                // border: 1px solid rgb(221, 221, 221);
+                margin-left: .066667rem;
+                font-size: .266667rem;
+                font-style: normal;
+                line-height: 1;
+                height: .293333rem;
                 display: inline-block;
-                vertical-align: middle;
-                margin:0 5px;
+                box-sizing: border-box;
+                text-align: center;
+                // border: 1px solid;
+                border-radius: .04rem;
             }
         }
     }
     .desc{
-        line-height: 20px;
+        margin-top: .2rem;
         display: flex;
         align-items: center;
-        margin-top: 20px;
+        justify-content: space-between;
         font-size: 20px;
         color: #666;
         font-weight: 500;
     }
-    .count {
-        margin:0 8px 0 0;
-        color: #ff6000;
-        font-weight: 600;
+    .desc-text{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
-    
+    .count {
+        font-size: .293333rem;
+        margin: 0 .106667rem;
+        color: #ff6000;
+    }
+    .total{
+        font-size: .293333rem;
+        color: #666;
+        font-weight: 500;
+    }
+    .desc-identyfy{
+        display: flex;
+        
+        span{
+            padding: 0 .053333rem;
+            border: 1px solid #44a5ff;
+            border-radius: .053333rem;
+            background-color: #fff;
+            color: #2395ff;
+            font-size: .266667rem;
+            line-height: .346667rem;
+        }
+        span:not(:last-child){
+            margin-right: .08rem;
+        }
+        .identyfy-way{
+            background-color: #2395ff;
+            color: #fff;
+        }
+    }
+    .desc2{
+        margin-top: .226667rem;
+        line-height: .32rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .price-info{
+        color: #666;
+        display: flex;
+        align-items: center;
+        span:nth-of-type(2){
+            overflow: hidden;
+            max-width: 2.666667rem;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            &::before,&::after{
+                margin: 0 .08rem;
+                color: #ddd;
+                content: "/";
+            }
+        }
+        
+    }
+    .disinfo{
+        display: flex;
+        align-items: center;
+        span:first-child{
+            color: #999;
+        }
+        span:last-child{
+            color: #2395ff;
+            &::before{
+                margin: 0 .08rem;
+                color: #ddd;
+                content: "/";
+            }
+        }
+    }
 </style>
 
