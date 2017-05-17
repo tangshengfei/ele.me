@@ -17,3 +17,10 @@ export const initShopList = async ( { commit, state } ) => {
         shopList : data
     });
 }
+
+export const initEntries = async ( {commit, state} ) => {
+    const { data } = await api.getStaticJson('entries');
+    commit(actions.INIT_ENTRIES, {
+        foodEntries: data[0].entries
+    })
+}

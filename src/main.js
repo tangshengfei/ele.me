@@ -7,6 +7,8 @@ import VueRouter from "vue-router";
 import Vuex from "vuex";
 import store from "./store";
 
+import { routerMode } from "./common/env";
+
 import FastClick from "fastclick";
 Vue.config.productionTip = false;
 
@@ -19,7 +21,7 @@ Vue.use(Vuex);
 
 const router = new VueRouter({
   routes,
-  // mode:'history'
+  mode:routerMode
 });
 
 window.app = new Vue({

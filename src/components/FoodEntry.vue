@@ -2,18 +2,18 @@
     <div class="food-entry">
         <div class="wrap">
             <ul class="item">
-                <li v-for="(el, index) in list1">
+                <li v-for="(el, index) in limit(data, 0, 8)">
                     <router-link :to="el.path ? el.path : '/shop'">
-                        <img :src="'static/assets/img/'+(index+1)+'.jpeg'"/>
-                        <span>{{el.text}}</span>
+                        <img :src="getImgPath(el.image_hash)"/>
+                        <span>{{el.name}}</span>
                     </router-link>
                 </li>
             </ul>
             <ul class="item">
-                <li v-for="(el, index) in list2">
+                <li v-for="(el, index) in limit(data, 8)">
                     <router-link :to="'/food'">
                         <img :src="'static/assets/img/'+(index+9)+'.jpeg'"/>
-                        <span>{{el.text}}</span>
+                        <span>{{el.name}}</span>
                     </router-link>
                 </li>
             </ul>
@@ -25,85 +25,16 @@
     </div>
 </template>
 <script>
+    import { getImgPath } from "../common/mixin";
+
     export default {
-        data() {
-            return {
-                list1: [
-                    {
-                        path: '',
-                        imgSrc:'',
-                        text:'美食'
-                    },
-                    {
-                        path: '',
-                        imgSrc:'',
-                        text:'甜品饮品'
-                    },
-                    {
-                        path: '',
-                        imgSrc:'',
-                        text:'商超便利'
-                    },
-                    {
-                        path: '/breakfirst',
-                        imgSrc:'',
-                        text:'预定早餐'
-                    },
-                    {
-                        path: '',
-                        imgSrc:'',
-                        text:'果鲜生疏'
-                    },
-                    {
-                        path: '',
-                        imgSrc:'',
-                        text:'新店特惠'
-                    },
-                    {
-                        path: '',
-                        imgSrc:'',
-                        text:'准时达'
-                    },
-                    {
-                        path: '',
-                        imgSrc:'',
-                        text:'下午茶'
-                    }
-                ],
-                list2: [
-                    {
-                        imgSrc:'',
-                        text:'土豪推荐'
-                    },
-                    {
-                        imgSrc:'',
-                        text:'汉堡薯条'
-                    },
-                    {
-                        imgSrc:'',
-                        text:'包子粥店'
-                    },
-                    {
-                        imgSrc:'',
-                        text:'鲜花蛋糕'
-                    },
-                    {
-                        imgSrc:'',
-                        text:'麻辣烫'
-                    },
-                    {
-                        imgSrc:'',
-                        text:'川湘菜'
-                    },
-                    {
-                        imgSrc:'',
-                        text:'披萨意面'
-                    },
-                    {
-                        imgSrc:'',
-                        text:'日韩料理'
-                    }
-                ]
+        props: ['data'],
+        mixins:[getImgPath],
+        methods: {
+            limit (arr, offset, count) {
+                // count = count == 'undefined' ? arr.length : count;
+                var ret = arr.slice(offset, count);
+                return ret;
             }
         }
     }

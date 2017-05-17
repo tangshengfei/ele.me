@@ -1,13 +1,16 @@
 <template>
     <ul class="shop-list">
         <li v-for="(el, index) in data" class="item">
-            <router-link :to="'/shopInfo'">
+            <router-link :to="{path:'/shopInfo', params:{id: el.id}}">
                 <div class="logo">
-                    <img src="/static/assets/shop/logo.jpeg">
+                    <img :src="getImgPath(el.image_path)">
+                    <div class="logo-new" v-if="el.is_new">
+                        <span>新店</span>
+                    </div>
                 </div>
                 <div class="info">
                     <div class="header">
-                        <h3 class="title level1">{{el.name}}</h3>
+                        <h3 class="title" :class="el.is_premium?'level1':''" :title="el.name">{{el.name}}</h3>
                         <div class="labels">
                             <span v-for="i in el.supports">{{i.icon_name}}</span>
                         </div>
@@ -19,23 +22,23 @@
                                 {{el.rating}}
                             </div>
                             <div class="total">
-                                月售1461单
+                                月售{{el.recent_order_num}}单
                             </div>
                         </div>
-                        <div class="desc-identyfy">
+                        <div class="desc-identyfy" v-if="el.delivery_mode">
                             <span>准时达</span>
-                            <span class="identyfy-way">蜂鸟专送</span>
+                            <span class="identyfy-way">{{el.delivery_mode.text}}</span>
                         </div>
                     </div>
                     <div class="desc2">
                         <div class="price-info">
-                            <span>¥20起送</span>
-                            <span>配送费¥5</span>
-                            <span>¥28/人</span>
+                            <span>¥{{el.float_minimum_order_amount}}起送</span>
+                            <span>配送费{{el.float_delivery_fee}}</span>
+                            <span>{{el.average_cost}}</span>
                         </div>
                         <div class="disinfo">
                             <span>{{el.distance | distance(el.distance)}}m</span>
-                            <span>27分钟</span>
+                            <span>{{el.order_lead_time}}分钟</span>
                         </div>
                     </div>
                 </div>
@@ -45,11 +48,14 @@
 </template>
 <script>
     import Raty from "@/components/Raty";
+    import { getImgPath } from "../common/mixin";
+
     export default {
         props: ['data'],
         components: {
             Raty
         },
+        mixins:[getImgPath],
         filters: {
             distance(num){
                 return num >= 1000 ? (num / 1000).toFixed(2) + 'k' : num
@@ -73,6 +79,7 @@
             }
         }
         .logo{
+            position:relative;
             padding: .4rem .266667rem;
             width: 1.6rem;
             height: 1.6rem;
@@ -80,6 +87,27 @@
                 border-radius: .053333rem;
                 width: 100%;
                 height: 100%;
+            }
+        }
+        .logo-new {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 50;
+            width: .853333rem;
+            height: .853333rem;
+            // background-image: -webkit-linear-gradient(315deg,#26ce61,#26ce61 50%,transparent 0);
+            background-image: linear-gradient(135deg,#26ce61,#26ce61 50%,transparent 0);
+            font-size: .24rem;
+            span{
+                position: absolute;
+                top: .133333rem;
+                left: .026667rem;
+                display: block;
+                color: #fff;
+                font-weight: 700;
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
             }
         }
         .info{

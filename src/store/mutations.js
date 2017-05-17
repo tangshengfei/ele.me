@@ -15,7 +15,12 @@ export const initShopList = ( state, { shopList } ) => {
     Vue.set(state, 'shopList', shopList);
 }
 
+export const initEntries = ( state, { foodEntries } ) => {
+    Vue.set(state, 'foodEntries', foodEntries);
+}
+
 export default {
+    [actions.INIT_ENTRIES] : initEntries,
     [actions.INIT_DISCOVER] : initDiscover,
     [actions.INIT_SHOP_LIST] : initShopList
 }
