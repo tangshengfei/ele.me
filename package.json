@@ -2,7 +2,7 @@
   "name": "eleme.me",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "tangsf <864126508@qq.com>",
+  "author": "tsf <864126508@qq.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
@@ -14,8 +14,11 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "axios": "^0.16.1",
+    "fastclick": "^1.0.6",
     "vue": "^2.2.6",
-    "vue-router": "^2.3.1"
+    "vue-router": "^2.3.1",
+    "vuex": "^2.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
@@ -59,8 +62,6 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.30",
     "karma-webpack": "^2.0.2",
-    "less": "^2.7.2",
-    "less-loader": "^4.0.3",
     "lolex": "^1.5.2",
     "mocha": "^3.2.0",
     "nightwatch": "^0.9.12",
@@ -68,7 +69,9 @@
     "opn": "^4.0.2",
     "optimize-css-assets-webpack-plugin": "^1.3.0",
     "ora": "^1.2.0",
+    "phantomjs-prebuilt": "^2.1.14",
     "rimraf": "^2.6.0",
+    "sass-loader": "^6.0.5",
     "selenium-server": "^3.0.1",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
