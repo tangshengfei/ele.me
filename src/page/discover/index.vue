@@ -2,14 +2,7 @@
     <div class="flex">
         <TopHeader :title="'发现'"/>
         <div class="flex-container discover">
-            <!-- parts -->
-            <div class="parts">
-                <DiscoverEntry :list="entrys"/>
-                <div class="entry block">
-                    <a href="#"><img src="/static/assets/discover/part-block.jpeg"></a>
-                </div>
-            </div>
-            <!-- parts -->
+            <DiscoverEntry :list="entrys" :ads="disAds"/>
             <!--activity-->
             <div class="activity">
                 <div class="activity-header">
@@ -38,47 +31,28 @@
     import FooterNav from "@/components/FooterNav";
     import TopHeader from "@/components/TopHeader";
     import DiscoverEntry from "@/components/DiscoverEntry";
+    import { mapActions, mapState } from "vuex";
+    import * as actions from "../../store/mutations-type";
 
     export default {
         data() {
             return {
-                title: '',
-                entrys: [
-                    {
-                        url: '#',
-                        src: '/static/assets/discover/part-icon1.jpeg',
-                        color: '#FF9700',
-                        title: '积分商城',
-                        tips: '0元好物在这里！',
-                    },
-                    {
-                        url: '#',
-                        src: '/static/assets/discover/part-icon2.jpeg',
-                        color: '#F5785D',
-                        title: '美味爆料',
-                        tips: '承包你的小饥饿！',
-                    },
-                    {
-                        url: '#',
-                        src: '/static/assets/discover/part-icon3.jpeg',
-                        color: '#1BA9E1',
-                        title: '推荐有奖',
-                        tips: '5元现金拿不停',
-                    },
-                    {
-                        url: '#',
-                        src: '/static/assets/discover/part-icon4.jpeg',
-                        color: '#A2CF26',
-                        title: '有红包快抢',
-                        tips: '礼包福利领不停',
-                    }
-                ]
+                title: ''
             }
+        },
+        computed: {
+            ...mapState(['entrys', 'disAds'])
         },
         components: {
             TopHeader,
             FooterNav,
             DiscoverEntry
+        },
+        created() {
+            this[actions.INIT_DISCOVER]();
+        },
+        methods: {
+            ...mapActions([actions.INIT_DISCOVER])
         }
     }
 </script>

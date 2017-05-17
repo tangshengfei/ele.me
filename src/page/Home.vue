@@ -4,7 +4,7 @@
             <HomeHeader />
             <FoodEntry />
             <h3 class="home-title">推荐商家</h3>
-            <ShopList />
+            <ShopList :data="shopList"/>
         </div>
         <FooterNav />
     </div>
@@ -14,6 +14,8 @@
     import FoodEntry from "@/components/FoodEntry"
     import ShopList from "@/components/ShopList"
     import FooterNav from "@/components/FooterNav";
+    import { mapActions, mapState } from "vuex";
+    import * as actions from "../store/mutations-type";
 
     export default {
         data() {
@@ -26,6 +28,16 @@
             FoodEntry,
             ShopList,
             FooterNav
+        },
+        computed: {
+            ...mapState(['shopList'])
+        },
+        methods: {
+            ...mapActions([actions.INIT_SHOP_LIST])
+        },
+        created(){
+            this[actions.INIT_SHOP_LIST]();
+            // console.log(this[actions.INIT_SHOP_LIST]);
         }
     }
 </script>

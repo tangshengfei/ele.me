@@ -1,23 +1,22 @@
 <template>
     <ul class="shop-list">
-        <li v-for="(el, index) in shopList" class="item">
+        <li v-for="(el, index) in data" class="item">
             <router-link :to="'/shopInfo'">
                 <div class="logo">
                     <img src="/static/assets/shop/logo.jpeg">
                 </div>
                 <div class="info">
                     <div class="header">
-                        <h3 class="title level1">吉祥馄饨（新昌店）</h3>
+                        <h3 class="title level1">{{el.name}}</h3>
                         <div class="labels">
-                            <span>保</span>
-                            <span>准</span>
+                            <span v-for="i in el.supports">{{i.icon_name}}</span>
                         </div>
                     </div>
                     <div class="desc">
                         <div class="desc-text">
-                            <Raty :count="4.6"/>
+                            <Raty :count="el.rating"/>
                             <div class="count">
-                                4.6
+                                {{el.rating}}
                             </div>
                             <div class="total">
                                 月售1461单
@@ -35,7 +34,7 @@
                             <span>¥28/人</span>
                         </div>
                         <div class="disinfo">
-                            <span>880m</span>
+                            <span>{{el.distance | distance(el.distance)}}m</span>
                             <span>27分钟</span>
                         </div>
                     </div>
@@ -47,13 +46,14 @@
 <script>
     import Raty from "@/components/Raty";
     export default {
-        data() {
-            return {
-                shopList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-            }
-        },
+        props: ['data'],
         components: {
             Raty
+        },
+        filters: {
+            distance(num){
+                return num >= 1000 ? (num / 1000).toFixed(2) + 'k' : num
+            }
         }
     }
 </script>
@@ -100,6 +100,9 @@
             color: #333;
             font-weight: 700;
             font-size: .4rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
             &.level1::before{
                 margin-right: .133333rem;
                 padding: 0 .066667rem;

@@ -1,15 +1,22 @@
 <template>
-    <div class="entry" :class="[list.length == 4?'list':'list1']">
-        <a v-for="info in list" :href="info.url" class="child">
-            <img class="img-icon" :src="info.src">
-            <p class="entry-title" :style="{color:info.color}">{{info.title}}</p>
-            <p class="entry-tips">{{info.tips}}</p>
-        </a>
+    <!-- parts -->
+    <div class="parts">
+        <div class="entry list">
+            <a v-for="info in list" :href="info.url" class="child">
+                <img class="img-icon" :src="info.src">
+                <p class="entry-title" :style="{color:info.title_color}">{{info.title}}</p>
+                <p class="entry-tips">{{info.subtitle}}</p>
+            </a>
+        </div>
+        <div class="entry block">
+            <a href="#"><img src="/static/assets/discover/part-block.jpeg"></a>
+        </div>
     </div>
+    <!-- parts -->
 </template>
 <script>
     export default {
-        props: ["list"]
+        props: ["list", 'ads']
     }
 </script>
 <style lang="scss" scoped>
@@ -52,4 +59,3 @@
         }
     }
 </style>
-
