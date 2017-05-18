@@ -1,21 +1,10 @@
 <template>
-    <div class="flex">
-        <div class="flex-container">
-            我是订单页面
-        </div>
-        <FooterNav />
-    </div>
+    <keep-live>
+        <router-view></router-view>
+    </keep-live>
 </template>
 <script>
-    import FooterNav from "@/components/FooterNav";
     export default {
-        data() {
-            return {
-                title: ''
-            }
-        },
-        components: {
-            FooterNav
-        }
+
     }
 </script>

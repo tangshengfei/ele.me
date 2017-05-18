@@ -25,18 +25,11 @@
     </div>
 </template>
 <script>
-    import { getImgPath } from "../common/mixin";
+    import { getImgPath, filters } from "../common/mixin";
 
     export default {
         props: ['data'],
-        mixins:[getImgPath],
-        methods: {
-            limit (arr, offset, count) {
-                // count = count == 'undefined' ? arr.length : count;
-                var ret = arr.slice(offset, count);
-                return ret;
-            }
-        }
+        mixins:[getImgPath, filters]
     }
 </script>
 <style lang="scss">

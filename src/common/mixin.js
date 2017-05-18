@@ -15,7 +15,20 @@ export const getImgPath = {
 			}
 			let url = '/' + path.substr(0, 1) + '/' + path.substr(1, 2) + '/' + path.substr(3) + suffix;
 			return imgBaseUrl + url
-		},
+		}
 	}
 
-}  
+}
+export const filters = {
+	filters: {
+		cutNumber(num, offset) {
+			return (num).toFixed(offset || 2);
+		}
+	},
+	methods: {
+		limit (arr, offset, count) {
+			arr = arr || [];
+			return arr.slice(offset, count);
+		}
+	}
+}
