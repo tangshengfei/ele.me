@@ -65,14 +65,21 @@
         flex-flow: column;
         align-items: center;
         justify-content: center;
-        // font-weight: bold;
+        svg{
+            fill: #666;
+            transition: all .3s ease-out;
+        }
         
     }
     .router-link-active{
         color:$baseColor;
+        svg{
+            fill: $baseColor;
+        }
     }
     .icon{
-        font-size: .533333rem;
+        width: .533333rem;
+        height: .533333rem;
         display: inline-block;
     }
     .text{

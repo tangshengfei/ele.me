@@ -8,7 +8,7 @@ import Vuex from "vuex";
 import store from "./store";
 
 import { routerMode } from "./common/env";
-
+import "./plugins/svg";
 import FastClick from "fastclick";
 Vue.config.productionTip = false;
 

@@ -1,8 +1,21 @@
 import * as actions from "./mutations-type";
 import api from "../services/index";
+import { getStore, setStore } from "../common/utils";
+
+const fetchData = (commit, name, ) => {
+
+}
 
 export const initDiscover = async ( { commit, state } ) => {
-    const { data } = await api.getStaticJson('discover');
+    let data ;
+    // if (getStore(actions.INIT_DISCOVER)) {
+    //     data = JSON.parse(getStore(actions.INIT_DISCOVER));
+    // } else {
+    //     data  = (await api.getStaticJson('discover')).data;
+    //     setStore(actions.INIT_DISCOVER,data);
+    // }
+
+    data  = (await api.getStaticJson('discover')).data;
 
     commit(actions.INIT_DISCOVER, {
         entrys : data[1],
@@ -11,7 +24,14 @@ export const initDiscover = async ( { commit, state } ) => {
 }
 
 export const initShopList = async ( { commit, state } ) => {
-    const { data } = await api.getStaticJson('shopList');
+
+    let data ;
+    if (getStore(actions.INIT_SHOP_LIST)) {
+        data = JSON.parse(getStore(actions.INIT_SHOP_LIST));
+    } else {
+        data  = (await api.getStaticJson('shopList')).data;
+        setStore(actions.INIT_SHOP_LIST,data);
+    }
 
     commit(actions.INIT_SHOP_LIST, {
         shopList : data

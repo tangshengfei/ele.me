@@ -1,10 +1,11 @@
 <template>
     <div class="top-header">
-        <a href="javascript:;" @click="back" class="back icon">&#xe708;</a>
+        <a href="javascript:;" @click="back" class="back"><Icon icon="icon-back"/></a>
         <h1>{{title}}</h1>
     </div>
 </template>
 <script>
+    import Icon from "./Icon";
     export default {
         props: ["title"],
         methods:{
@@ -12,6 +13,9 @@
                 this.$router.go(-1)
                 this.$emit('back');
             }
+        },
+        components: {
+            Icon
         }
     }
 </script>
@@ -43,5 +47,11 @@
         align-items: center;
         justify-content:center;
         font-size: 0.65rem;
+        svg{
+            display: block;
+            width: .586667rem;
+            height: .586667rem;
+            fill: #fff;
+        }
     }
 </style>

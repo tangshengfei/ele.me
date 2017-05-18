@@ -1,8 +1,8 @@
 <template>
     <transition name="slide-left">
-        <!--<keep-alive>-->
+        <keep-alive>
             <router-view></router-view>
-        <!--</keep-alive>-->
+        </keep-alive>
     </transition>
 </template>
 <script>
