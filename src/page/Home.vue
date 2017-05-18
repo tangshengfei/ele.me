@@ -1,5 +1,5 @@
 <template>
-    <div class="container flex">
+    <div class="flex container">
         <div class="flex-container">
             <HomeHeader />
             <FoodEntry :data="foodEntries || []"/>

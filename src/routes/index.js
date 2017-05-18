@@ -4,11 +4,11 @@ import Home from '@/page/Home.vue';
 import Discover from '@/page/discover/index';
 import Profile from "@/page/profile/index"
 
-import Order from "@/page/order/index";
-import OrderList from "@/page/order/list";
+// import Order from "@/page/order/index";
+import Order from "@/page/order/list";
 import OrderInfo from "@/page/order/info";
 
-import Shop from "@/page/shop/index";
+import Shop from "@/page/shop/list";
 import ShopInfo from "@/page/shop/info";
 
 import BreakFirst from "@/page/breakfirst/index";
@@ -33,23 +33,20 @@ export default [{
         {
             path: '/order',
             component: Order,
-            extract: true,
-            children: [
-                {
-                    path: '',
-                    redirect: '/list',
-                },
-                {
-                    path: '/list',
-                    name: 'orderList',
-                    component: OrderList
-                },
-                {
-                    path: '/info/:orderId',
-                    name: 'orderInfo',
-                    component: OrderInfo
-                }
-            ]
+            extract: true ,
+            // 两种动画方案，注意配合router-view组件使用
+            // children: [
+            //     {
+            //         path: '/order/info',
+            //         name: 'orderInfo',
+            //         component: OrderInfo
+            //     }
+            // ]
+        },
+        {
+            path: '/order/info',
+            name: 'orderInfo',
+            component: OrderInfo
         },
         {
             path: '/profile',
@@ -60,7 +57,8 @@ export default [{
             component: Shop
         },
         {
-            path: '/shopInfo/:shopId',
+            path: '/shop/info',
+            name:'shopInfo',
             component: ShopInfo
         },
         {

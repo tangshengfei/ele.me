@@ -7,6 +7,10 @@
             </div>
         </div>
         <FooterNav />
+        <!-- 两种动画方案，注意配合children路由使用 -->
+        <!--<transition mode="out-in" name="slide-left">
+            <router-view class="child-view"></router-view>
+        </transition>-->
     </div>
 </template>
 <script>

@@ -2,20 +2,19 @@ import * as actions from "./mutations-type";
 import api from "../services/index";
 import { getStore, setStore } from "../common/utils";
 
-
 /**
  * 初始化 发现页面头部的发现入口
  */
 export const initDiscover = async ( { commit, state } ) => {
     let data ;
-    // if (getStore(actions.INIT_DISCOVER)) {
-    //     data = JSON.parse(getStore(actions.INIT_DISCOVER));
-    // } else {
-    //     data  = (await api.getStaticJson('discover')).data;
-    //     setStore(actions.INIT_DISCOVER,data);
-    // }
+    if (getStore(actions.INIT_DISCOVER)) {
+        data = JSON.parse(getStore(actions.INIT_DISCOVER));
+    } else {
+        data  = (await api.getStaticJson('discover')).data;
+        setStore(actions.INIT_DISCOVER,data);
+    }
 
-    data  = (await api.getStaticJson('discover')).data;
+    // data  = (await api.getStaticJson('discover')).data;
 
     commit(actions.INIT_DISCOVER, {
         entrys : data[1],
@@ -57,7 +56,17 @@ export const initEntries = async ( {commit, state} ) => {
  * 初始化订单列表
  */
 export const initOrderList = async ( { commit, state } ) => {
-    const { data } = await api.getStaticJson('order');
+
+    let data ;
+    // 缓存到local
+    if (getStore(actions.INIT_ORDER_LIST)) {
+        data = JSON.parse(getStore(actions.INIT_ORDER_LIST));
+    } else {
+        data  = (await api.getStaticJson('order')).data;
+        setStore(actions.INIT_ORDER_LIST,data);
+    }
+
+    // const { data } = await api.getStaticJson('order');
 
     commit(actions.INIT_ORDER_LIST, {
         orderList: data

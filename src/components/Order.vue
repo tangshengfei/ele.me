@@ -1,5 +1,5 @@
 <template>
-    <router-link class="ordercard" :to="{ path: 'order/orderInfo', params: {id: info.id}}">
+    <router-link class="ordercard" :to="{ name:'orderInfo', query: {orderId: info.id}}">
         <div class="ordercard-body">
             <div class="ordercard-avatar">
                 <img :src="getImgPath(info.restaurant_image_hash)">

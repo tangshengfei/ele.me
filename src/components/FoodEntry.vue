@@ -3,7 +3,7 @@
         <div class="wrap">
             <ul class="item">
                 <li v-for="(el, index) in limit(data, 0, 8)">
-                    <router-link :to="el.path ? el.path : '/shop'">
+                    <router-link :to="{path: el.path ? el.path : '/shop', query: { level: 2 }}">
                         <img :src="getImgPath(el.image_hash)"/>
                         <span>{{el.name}}</span>
                     </router-link>

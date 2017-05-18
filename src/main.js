@@ -21,17 +21,12 @@ Vue.use(Vuex);
 
 const router = new VueRouter({
   routes,
-  mode:routerMode
+  mode:'hash'
 });
 
 window.app = new Vue({
   el: "#app",
 	router,
   store,
-  render: (h) => h(App),
-  watch: {
-      '$route' (to, from){
-          this.transitionName = to.path.split('/').length < from.path.split('/').length ? 'slide-right' : 'slide-left';
-      }
-  }
+  render: (h) => h(App)
 });

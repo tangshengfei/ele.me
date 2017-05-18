@@ -1,7 +1,7 @@
 <template>
     <ul class="shop-list">
         <li v-for="(el, index) in data" class="item">
-            <router-link :to="{path:'/shopInfo', params:{id: el.id}}">
+            <router-link :to="{name:'shopInfo', query:{shopId: el.id}}">
                 <div class="logo">
                     <img :src="getImgPath(el.image_path)">
                     <div class="logo-new" v-if="el.is_new">
