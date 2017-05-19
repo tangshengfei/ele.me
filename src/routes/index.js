@@ -67,11 +67,3 @@ export default [{
         }
     ]
 }];
-
-
-let $parent = $("#parent");
-
-
-$(".li", $parent)
-
-$parent.find(".li")
