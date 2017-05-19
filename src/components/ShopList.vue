@@ -58,7 +58,7 @@
         mixins:[getImgPath],
         filters: {
             distance(num){
-                return num >= 1000 ? (num / 1000).toFixed(2) + 'k' : num
+                return num >= 1000 ? (num / 1000).toFixed(2) + 'k' : num;
             }
         }
     }

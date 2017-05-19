@@ -19,7 +19,7 @@ export default [{
     children: [
         {
             path: '',
-            redirect: '/home',
+            redirect: '/home?level=1',
             component: Home
         },
         {
@@ -67,3 +67,11 @@ export default [{
         }
     ]
 }];
+
+
+let $parent = $("#parent");
+
+
+$(".li", $parent)
+
+$parent.find(".li")
