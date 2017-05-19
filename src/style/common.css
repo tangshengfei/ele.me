@@ -1,1 +1,52 @@
-null
+@font-face {
+  font-family: 'iconfont';
+  /* project id 299316 */
+  src: url("//at.alicdn.com/t/font_uq75if3t6i4cmcxr.eot");
+  src: url("//at.alicdn.com/t/font_uq75if3t6i4cmcxr.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_uq75if3t6i4cmcxr.woff") format("woff"), url("//at.alicdn.com/t/font_uq75if3t6i4cmcxr.ttf") format("truetype"), url("//at.alicdn.com/t/font_uq75if3t6i4cmcxr.svg#iconfont") format("svg");
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus, a:active {
+  background: transparent;
+  outline: none;
+  color: #666;
+}
+
+body, html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  width: 750px;
+  line-height: 1;
+  background: #f4f4f4;
+}
+
+body img, html img {
+  max-width: 750px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.icon {
+  font-style: normal;
+  font-family: "iconfont";
+}
+
+.router-fade-enter-active, .router-fade-leave-active {
+  transition: opacity .3s;
+}
+
+.router-fade-enter, .router-fade-leave-active {
+  opacity: 0;
+}
