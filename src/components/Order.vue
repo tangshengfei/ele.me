@@ -1,6 +1,6 @@
 <template>
-    <router-link class="ordercard" :to="{ name:'orderInfo', query: {orderId: info.id}}">
-        <div class="ordercard-body">
+    <div class="ordercard">
+        <router-link class="ordercard-body" :to="{ name:'orderInfo', query: {orderId: info.id}}">
             <div class="ordercard-avatar">
                 <img :src="getImgPath(info.restaurant_image_hash)">
             </div>
@@ -27,12 +27,12 @@
                     <p class="price">￥{{info.total_amount | cutNumber}}</p>
                 </div>
             </div>
-        </div>
+        </router-link>
         <div class="ordercard-bottom">
             <button class="cardbutton">再来一单</button>
             <button class="cardbutton alert" v-if="info.operation_rate">评价得{{info.rated_point}}积分</button>
         </div>
-    </router-link>
+    </div>
 </template>
 <script>
     import Icon from "./Icon";

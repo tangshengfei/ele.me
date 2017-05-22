@@ -1,5 +1,5 @@
 <template>
-    <transition :name="transitionName" mode="out-in">
+    <transition :name="transitionName">
         <!--<keep-alive>-->
             <router-view class="view" :key="getKey()" />
         <!--</keep-alive>-->
@@ -16,23 +16,23 @@
         computed:{
             transitionName(){
                 return this.$store.state.transitionName;
-            },
-            level(){
-                return this.$store.state.level;
             }
         },
         watch: {
             '$route' (to, from){
                 let transitionName = '',
-                    level = this.$route.query.level;
+                    toLen = to.path.split('/').length,
+                    fromLen = from.path.split('/').length;
 
-                if ( to.path.split('/').length > from.path.split('/').length || level > this.level) {
+                if ( toLen > fromLen) {
                     transitionName = 'slide-left';
-                } else {
+                } else if (toLen < fromLen){
                     transitionName = 'slide-right';
+                } else {
+                    transitionName = 'fade';
                 }
                 
-                this.$store.commit('setTransition', {transitionName,level});
+                this.$store.commit('setTransition', {transitionName});
             }
         }
   	}

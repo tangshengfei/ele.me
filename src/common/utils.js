@@ -274,3 +274,16 @@ export const animate = (element, target, duration = 400, mode = 'ease-out', call
         })
     }, 20);
 }
+
+export const getGeo = async () => {
+    const { latitude, longitude } = await new Promise(function(resolve, reject){
+        navigator.geolocation.getCurrentPosition(function( position ){
+            resolve(position.coords);
+        });
+    });
+
+    return {
+        latitude,
+        longitude
+    }
+}
