@@ -19,7 +19,7 @@ export default [{
     children: [
         {
             path: '',
-            redirect: '/home?level=1',
+            redirect: '/home',
             component: Home
         },
         {
@@ -33,7 +33,7 @@ export default [{
         {
             path: '/order',
             component: Order,
-            extract: true ,
+            exact: true ,
             // 两种动画方案，注意配合router-view组件使用
             // children: [
             //     {

@@ -23,9 +23,8 @@ export const initOrderList = ( state, { orderList } ) => {
     Vue.set(state, 'orderList', orderList);
 }
 
-export const setTransition = ( state, { transitionName, level } ) => {
+export const setTransition = ( state, { transitionName } ) => {
     transitionName && Vue.set(state, 'transitionName', transitionName);
-    level && Vue.set(state, 'level', level);
 }
 
 export default {
