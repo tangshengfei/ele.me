@@ -1,21 +1,43 @@
 <template>
-	<div>
-		<transition name="router-fade" mode="out-in">
-    		<router-view></router-view>
-    	</transition>
-    </div>
+    <transition :name="transitionName">
+        <!--<keep-alive>-->
+            <router-view class="view" :key="getKey()" />
+        <!--</keep-alive>-->
+    </transition>
 </template>
-
 <script>
+    import { mapMutations } from "vuex";
   	export default {
-    	name: 'app'
+        methods: {
+            getKey(){
+                return (new Date()).getTime()
+            }
+        },
+        computed:{
+            transitionName(){
+                return this.$store.state.transitionName;
+            }
+        },
+        watch: {
+            '$route' (to, from){
+                let transitionName = '',
+                    toLen = to.path.split('/').length,
+                    fromLen = from.path.split('/').length;
+
+                if ( toLen > fromLen) {
+                    transitionName = 'slide-left';
+                } else if (toLen < fromLen){
+                    transitionName = 'slide-right';
+                } else {
+                    transitionName = 'fade';
+                }
+                
+                this.$store.commit('setTransition', {transitionName});
+            }
+        }
   	}
 </script>
 <style lang="scss">
-	.router-fade-enter-active, .router-fade-leave-active {
-	  	transition: opacity .3s;
-	}
-	.router-fade-enter, .router-fade-leave-active {
-	  	opacity: 0;
-	}
+    @import "./style/style.scss";
 </style>
+

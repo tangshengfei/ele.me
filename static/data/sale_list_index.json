@@ -1,0 +1,47 @@
+{
+    "description": "",
+    "header_image": "6d5de7613f554b5db1380f266097504bjpeg",
+    "more_url": "eleme://web?url=https%3A%2F%2Fh5.ele.me%2Franking%2F%23type%3Dspecial_food\u0026navType=2",
+    "page_title": "天天特价",
+    "query_list": [],
+    "rank_id": "aa4af2a3eca34c35bc5b5d50f8893b2e",
+    "rules": " ",
+    "tabs": [
+        {
+            "name": "全部",
+            "params": {
+                "flavor_type": "1"
+            }
+        },
+        {
+            "name": "大牌特惠",
+            "params": {
+                "flavor_type": "2"
+            }
+        },
+        {
+            "name": "下午茶不贵",
+            "params": {
+                "flavor_type": "3"
+            }
+        },
+        {
+            "name": "商超百货",
+            "params": {
+                "flavor_type": "4"
+            }
+        },
+        {
+            "name": "水果生鲜",
+            "params": {
+                "flavor_type": "5"
+            }
+        },
+        {
+            "name": "鲜花奶茶",
+            "params": {
+                "flavor_type": "6"
+            }
+        }
+    ]
+}
