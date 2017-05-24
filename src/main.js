@@ -12,6 +12,8 @@ import "./plugins/svg";
 import FastClick from "fastclick";
 Vue.config.productionTip = false;
 
+require("./common/utils")
+
 document.addEventListener("DOMContentLoaded", function(event) {
   new FastClick(document.body);
 });

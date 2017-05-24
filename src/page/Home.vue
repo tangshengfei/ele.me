@@ -39,11 +39,6 @@
         created(){
             this[actions.INIT_SHOP_LIST]();
             this[actions.INIT_ENTRIES]();
-            (async function (){
-                const { data } = await axios.get("/api/shopping/restaurants?latitude=31.23037&longitude=121.473701&offset=0&limit=20&extras[]=activities&terminal=h5");
-                console.log(data);
-            })();
-            
         }
     }
 </script>
