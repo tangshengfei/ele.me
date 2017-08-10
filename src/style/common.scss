@@ -1,0 +1,52 @@
+@function rem($px){
+     @return $px/75+rem;
+    // @return $px+px;
+}
+// @font-face {
+//   font-family: 'iconfont';  /* project id 299316 */
+//   src: url('//at.alicdn.com/t/font_yqk0yooun9bv5cdi.eot');
+//   src: url('//at.alicdn.com/t/font_yqk0yooun9bv5cdi.eot?#iefix') format('embedded-opentype'),
+//   url('//at.alicdn.com/t/font_yqk0yooun9bv5cdi.woff') format('woff'),
+//   url('//at.alicdn.com/t/font_yqk0yooun9bv5cdi.ttf') format('truetype'),
+//   url('//at.alicdn.com/t/font_yqk0yooun9bv5cdi.svg#iconfont') format('svg');
+// }
+
+$bodyBackgroundColor:#f4f4f4;
+$baseColor:#0089dc;
+$headerBackgroundColor:#0096FF;
+
+a{
+    text-decoration: none;
+    &:focus,&:active{
+        background:transparent;
+        outline: none;
+        color:#666;
+    }
+}
+body,html{
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+    // width: 750px;
+    line-height: 1;
+    background:$bodyBackgroundColor;
+    img{
+        max-width: 100%;
+    }
+    font-family: 'Helvetica Neue',Tahoma,Arial,PingFangSC-Regular,'Hiragino Sans GB','Microsoft Yahei',sans-serif;
+}
+
+*{
+    margin:0;
+    padding:0;
+    
+}
+*, ::after, ::before {
+    box-sizing: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+ul{
+    list-style: none;
+}
